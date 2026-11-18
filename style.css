@@ -1,0 +1,168 @@
+
+:root {
+  --teksti: #1f3d2b;       
+  --tausta: #f7f3e8;       
+  --korostus: #c8902e;     
+}
+
+body {
+  background-color: var(--tausta);
+  color: var(--teksti);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+header {
+  border-bottom: 2px solid var(--teksti);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--teksti);
+}
+
+header p {
+  margin: 5px 0 0 0;
+  font-style: italic;
+}
+
+
+nav ul {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;        
+  gap: 15px;           
+}
+
+nav a {
+  color: var(--teksti);
+  text-decoration: none; 
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--korostus);
+  border-bottom: 2px solid var(--korostus);
+}
+
+main {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+main h2 {
+  color: var(--teksti);
+}
+
+footer {
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  color: #555;
+}
+
+.sauna-kortti {
+  background-color: rgba(31, 61, 43, 0.05);
+  border-left: 4px solid var(--korostus);   
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.sauna-kortti h3 {
+  margin-top: 0;
+  color: var(--teksti);
+}
+
+.varauskalenteri {
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 20px;
+}
+
+.varauskalenteri th, .varauskalenteri td {
+  border: 1px solid var(--teksti);
+  padding: 12px;
+  text-align: left;
+}
+
+.varauskalenteri th {
+  background-color: var(--teksti);
+  color: var(--tausta);
+}
+
+.tila-vapaa {
+  background-color: rgba(200, 144, 46, 0.1); 
+  font-weight: bold;
+}
+
+.tila-varattu {
+  background-color: #e0e0e0; 
+  color: #777;
+  text-decoration: line-through; 
+}
+
+.varauslomake {
+  background-color: rgba(31, 61, 43, 0.03);
+  padding: 20px;
+  border: 1px solid var(--teksti);
+  border-radius: 4px;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.lomake-ryhma {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lomake-ryhma label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.lomake-ryhma input, .lomake-ryhma select {
+  padding: 10px;
+  border: 1px solid var(--teksti);
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.laheta-nappi {
+  background-color: var(--korostus);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.laheta-nappi:hover {
+  background-color: var(--teksti);
+}
+
+.onnistumis-viesti {
+  display: none;
+  background-color: #f0f7f4;
+  border: 2px solid var(--teksti);
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 500px;
+}
+
+.onnistumis-viesti:target {
+  display: block;
+}
