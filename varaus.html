@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuivasjärven Rantasaunat -Etusivu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,8 +23,18 @@
     <main>
         <h2>Jätä varauspyyntö</h2>
         <p>Täytä alla oleva lomake tehdäksesi varauspyynnön. Vahvistamme kaikki varaukset puhelimitse.</p>
+        
+        <button type="button" popovertarget="varaus-ohje">Lue varaus- ja peruutusehdot</button>
+        <div id="varaus-ohje" popover>
+            <h3>Varaus- ja peruutusehdot</h3>
+            <p>Saunavuoro alkaa klo 17.00 ja päättyy klo 23.00.</p>
+            <p>Peruutus on maksuton viimeistään 3 päivää ennen varattua iltaa.</p>
+            <button type="button" popovertarget="varaus-ohje" popovertargetaction="hide">Sulje</button>
+        </div>
+        <div id="tallennettu-varaus" hidden></div>
 
-        <form class="varauslomake" action="#onnistui" method="GET">
+        
+        <form class="varauslomake" novalidate>
             
             <div class="lomake-ryhma">
             <label for="sauna-valinta">Valitse sauna:</label>
@@ -33,29 +44,31 @@
                 <option value="rantasauna">Puulämmitteinen rantasauna (Max 10 henkeä)</option>
                 <option value="mokkisauna">Pieni mökkisauna (Max 4 henkeä)</option>
             </select>
+            <span class="virhe-teksti" aria-live="polite"></span>
             </div>
 
-            <!-- Päivämäärän valinta -->
             <div class="lomake-ryhma">
             <label for="paiva-valinta">Valitse ilta:</label>
             <input type="date" id="paiva-valinta" name="paiva" required>
+            <span class="virhe-teksti" aria-live="polite"></span>
             </div>
 
             <div class="lomake-ryhma">
             <label for="nimi">Nimesi:</label>
-            <input type="text" id="nimi" name="nimi" placeholder="Matti Meikäläinen" required>
+            <input type="text" id="nimi" name="nimi" placeholder="Matti Meikäläinen" minlength="2" required>            <span class="virhe-teksti" aria-live="polite"></span>
             </div>
 
             <div class="lomake-ryhma">
             <label for="puhelin">Puhelinnumero:</label>
-            <input type="tel" id="puhelin" name="puhelin" placeholder="040 123 4567" required>
+            <input type="tel" id="puhelin" name="puhelin" placeholder="040 123 4567" minlength="6" required>
+            <span class="virhe-teksti" aria-live="polite"></span>
             </div>
 
             <button type="submit" class="laheta-nappi">Lähetä varauspyyntö</button>
         </form>
 
         
-        <div id="onnistui" class="onnistumis-viesti">
+        <div id="onnistui" class="onnistumis-viesti" hidden>
             <h3>✔ Kiitos varauspyynnöstä!</h3>
             <p>Pyyntönne on vastaanotettu onnistuneesti. Ville Ylinen vahvistaa varauksen teille puhelimitse mahdollisimman pian.</p>
         </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuivasjärven Rantasaunat - Saunatarjonta</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,17 +23,26 @@
     <main>
         <h2>saunatarjontamme</h2>
         <p>Löydät meiltä kolmea erilaista saunaa jokaiseen tarpeeseen. Kaikki saunat sijaitsevat kuivasjärven rannalla</p>
-        <div class="sauna-kortti">
+        
+        <div class="suodattimet" role="group" aria-label="Suodata saunoja koon mukaan"></div>
+            <button type="button" data-filter="kaikki" aria-pressed="true" class="aktiivinen">Kaikki saunat</button>
+            <button type="button" data-filter="iso" aria-pressed="false">Isot ryhmät (yli 10 hlö)</button>
+            <button type="button" data-filter="keskikoko" aria-pressed="false">Keskikoko (max 10 hlö)</button>
+            <button type="button" data-filter="pieni" aria-pressed="false">Pieni (max 4 hlö)</button>
+        </div>
+        <p id="sauna-status" aria-live="polite">Näytetään 3 / 3 saunaa</p>
+
+        <div class="sauna-kortti" data-category="iso">
             <h3>Savusauna</h3>
             <p><strong>kapasiteetti:</strong> Max 15 henkeä</p>
             <p><strong>Hinnat:</strong> Arkisin (ma-to) 180 €/ilta | Viikonloppuisin (pe-su) 240 €/ilta</p>
         </div>
-        <div class="sauna-kortti">
+        <div class="sauna-kortti" data-category="keskikoko">
             <h3>Puulämmitteinen sauna</h3>
             <p><strong>Kapasiteetti:</strong> Max 10 henkeä</p>
             <p><strong>Hinnat:</strong> Arkisin (ma-to) 120 €/ilta | Viikonloppuisin (pe-su) 160 €/ilta</p>
         </div>
-        <div class="sauna-kortti">
+        <div class="sauna-kortti" data-category="pieni">
             <h3>mökkisauna</h3>
             <p><strong>Kapasiteetti:</strong> Max 4 henkeä</p>
             <p><strong>Hinnat:</strong> Arkisin (ma-to) 70  €/ilta | Viikonloppuisin (pe-su) 90 €/ilta</p>

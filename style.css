@@ -166,3 +166,29 @@ footer {
 .onnistumis-viesti:target {
   display: block;
 }
+.virhe-teksti {
+  color: #b00020;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+button.aktiivinen {
+  font-weight: bold;
+  outline: 2px solid currentColor;
+}
+
+#varaus-ohje {
+  padding: 1.5rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+#tallennettu-varaus {
+  background: #ffffff;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid #c8902e;
+  margin: 1rem 0;
+}
+
